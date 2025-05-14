@@ -1,0 +1,34 @@
+﻿@model List<Team>
+
+<table class="table">
+    <a asp-area="Admin" asp-controller="TeamMembers" asp-action="Create" class="btn btn-primary btn-icon-split">
+        <span class="icon text-white-50">
+            <i class="fas fa-flag"></i>
+        </span>
+        <span class="text">Create</span>
+    </a>
+    <br>
+    <br>
+
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Member Name</th>
+            <th scope="col">Profession</th>
+          
+        </tr>
+    </thead>
+    <tbody>
+       @foreach(Team item in Model)
+       {
+        <tr>
+            <th scope="row">@item.Id</th>
+            <td>@item.Name</td>
+            <td>@item.Profession</td>
+          
+        </tr>
+
+       }
+        
+    </tbody>
+</table>
